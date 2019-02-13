@@ -1,0 +1,95 @@
+
+<div class="responsive-header">
+		<div class="responsive-menubar">
+			<div class="res-logo"><a routerLink="" title=""><img src="./../../assets/images/logo.png" alt="" /></a></div>
+			<div class="menu-resaction">
+				<div class="res-openmenu">
+					<img src="./../../assets/images/icon.png" alt="" /> Menu
+				</div>
+				<div class="res-closemenu">
+					<img src="./../../assets/images/icon2.png" alt="" /> Close
+				</div>
+			</div>
+		</div>
+		<div class="responsive-opensec">
+			<div class="btn-extars">
+				<a href="#" title="" class="post-job-btn"><i class="la la-plus"></i>Post Jobs</a>
+				<ul class="account-btns">
+					<li class="signup-popup"><a title=""><i class="la la-key"></i> Sign Up</a></li>
+					<li class="signin-popup"><a title=""><i class="la la-external-link-square"></i> Login</a></li>
+				</ul>
+			</div><!-- Btn Extras -->
+			<form class="res-search">
+				<input type="text" placeholder="Job title, keywords or company name" />
+				<button type="submit"><i class="la la-search"></i></button>
+			</form>
+			<div class="responsivemenu">
+				<ul>
+						<li class="menu-item-has-children">
+							<a href="#" title="">Referrals</a>
+						</li>
+						<li class="menu-item-has-children" >
+							<a  title="">Candidates</a>
+						</li>
+						<li class="menu-item-has-children">
+							<a href="#" title="">Companies</a>
+
+						</li>
+						<li class="menu-item-has-children">
+							<a href="#" title="">career Help</a>
+						</li>
+						<li class="menu-item-has-children">
+							<a href="#" title="">Contact Us</a>
+						</li>
+					</ul>
+			</div>
+		</div>
+	</div>
+	
+	<header class="stick-top forsticky">
+		<div class="menu-sec">
+			<div class="container">
+				<div class="logo">
+					<a href="index.html" title=""><img class="hidesticky" src="./../../assets/images/logo.png" alt="" /><img class="showsticky" src="./../../assets/images/logo10.png" alt="" /></a>
+				</div><!-- Logo -->
+				<div class="btn-extars">
+					<a href="#" title="" class="post-job-btn"><i class="la la-plus"></i>Post Jobs</a>
+					<ul class="account-btns">
+						<li class="signup-popup" (click)="openSignUp()"><a title=""><i class="la la-key"></i> Sign Up</a></li>
+						<li class="signin-popup" (click)="openLogin()"><a title=""><i class="la la-external-link-square"></i> Login</a></li>
+					</ul>
+				</div><!-- Btn Extras -->
+				<nav>
+					<ul>
+						<li class="menu-item-has-children">
+							<a href="#" title="" routerLink = "/listRefers">Referrals</a>
+						</li>
+						<li class="menu-item-has-children">
+							<a href="#" title="" routerLink = "/candidateList">Candidates</a>
+						</li>
+						<li class="menu-item-has-children">
+							<a href="#" title="" routerLink = "/listCompanies">Companies</a>
+
+						</li>
+						<li class="menu-item-has-children">
+							<a routerLink = "/listCompanies" title="">Career Help</a>
+						</li>
+						<li class="menu-item-has-children">
+							<a href="#" title="">Contact Us</a>
+						</li>
+					</ul>
+				</nav><!-- Menus -->
+			</div>
+		</div>
+	</header>
+
+
+
+
+
+
+	
+
+	
+	
+
