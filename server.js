@@ -6,22 +6,14 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var server = http.createServer(app);
 var app = express();
-const passport = require('passport');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
 
 //Put your angular dist folder here
 app.use(express.static(path.join(__dirname, 'dist/jobReference')));
 const routes = require('./routes/routes.js')(app);
-app.use(passport.initialize());
 
-app.use(function(req, res, next) {
-   res.header("Access-Control-Allow-Origin", "*");
-   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    res.header("Content-Type", "application/json");
-    res.header("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
-    next();
- });
+
 function normalizePort(val) {
    var port = parseInt(val, 10);
 
