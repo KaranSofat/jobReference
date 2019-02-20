@@ -1,4 +1,5 @@
 var connection = require('./../connection/connection');
+const passport = require('passport');
 var mailer = require('./mailer');
     exports.registerUser= function(req, res, next) {
     	var username = req.body.username
@@ -29,8 +30,14 @@ var mailer = require('./mailer');
 		});
          
        }) .catch(function (e) {
-        
-        
     });
 
-    }  
+    } 
+
+exports.authenticate = (req, res, next) => {
+    passport.authenticate('local', (err, user) => {    
+        if (err) return res.status(400).json(err);
+        else if (user) return res.status(200).json({ "token": user.generateJwt() });
+        else return res.status(404).json({'error':'error'});
+    })(req, res);
+}     

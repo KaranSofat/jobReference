@@ -1,5 +1,5 @@
 const mysql = require('knex');
-const connection = mysql({
+const knex  = mysql({
   client: 'mysql',
   connection: {
     host : 'localhost',
@@ -9,5 +9,8 @@ const connection = mysql({
   },
  
 });
+module.exports = knex;
+var bookshelf  = require('bookshelf')(knex );
 
-module.exports = connection;
+bookshelf .plugin('registry');
+module.exports = bookshelf;
