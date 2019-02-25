@@ -14,20 +14,24 @@ import { CandidateHeaderComponent } from './common/candidate-header/candidate-he
 import { CandidateAppliedJobsComponent } from './candidate-applied-jobs/candidate-applied-jobs.component';
 import { CandidatePostedJobsComponent } from './candidate-posted-jobs/candidate-posted-jobs.component';
 import { CandidateDetailComponent } from './candidate-detail/candidate-detail.component';
+import { UserloginComponent } from './userlogin/userlogin.component';
+import { UsersignupComponent } from './usersignup/usersignup.component';
+import { AuthGuard } from './auth/auth.guard';
 const routes: Routes = [
   {
     path: '',
     component: SiteLayoutComponent,
     children: [
           { path: '', component: HomeComponent, pathMatch: 'full'},
-         
+           { path: 'login', component: UserloginComponent,  pathMatch: 'full'},
+           { path: 'signup', component: UsersignupComponent, pathMatch: 'full'},
            
         ]
   },{
     path: '',
     component: CandidateLayoutComponent,
     children: [
-          { path: 'dashboard', component: CandidateDashboardComponent, pathMatch: 'full'},
+          { path: 'dashboard', canActivate:[AuthGuard], component: CandidateDashboardComponent, pathMatch: 'full'},
           { path: 'details', component: CandidateDetailComponent, pathMatch: 'full'},
            { path: 'profile', component: CandidateProfileComponent, pathMatch: 'full'},
           { path: 'appliedJobs', component: CandidateAppliedJobsComponent, pathMatch: 'full'},

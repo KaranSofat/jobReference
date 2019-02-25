@@ -5,7 +5,7 @@ import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatDialogModule } from '@angular/material';
 import { DialogService } from './dialogService/dialoge-service';
-
+import { DataService } from './common/shared.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,8 +26,14 @@ import { CandidateDetailComponent } from './candidate-detail/candidate-detail.co
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { LoginComponent } from './pops/login/login.component';
 import { SignupComponent } from './pops/signup/signup.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgxUiLoaderModule, NgxUiLoaderConfig, SPINNER, POSITION, PB_DIRECTION } from 'ngx-ui-loader';
+import { UserloginComponent } from './userlogin/userlogin.component';
+import { UsersignupComponent } from './usersignup/usersignup.component';
+import { AuthGuard } from './auth/auth.guard';
+import { AuthInterceptor } from './auth/auth.interceptor';
+import { LoginService } from './userlogin/login.service';
+
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: 'red',
   bgsPosition: POSITION.bottomCenter,
@@ -54,7 +60,9 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     CandidatePostedJobsComponent,
     CandidateDetailComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    UserloginComponent,
+    UsersignupComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +84,11 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     HttpClientModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig)
   ],
-  providers: [DialogService],
+   providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  },AuthGuard,LoginService,DialogService,DataService],
   bootstrap: [AppComponent],
    entryComponents: [ LoginComponent,SignupComponent ],
 })

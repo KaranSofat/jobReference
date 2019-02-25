@@ -1,17 +1,20 @@
-var connection = require('./../connection/connection');
+var connection = require('./../connection/conn');
 const passport = require('passport');
 var mailer = require('./mailer');
     exports.registerUser= function(req, res, next) {
     	var username = req.body.username
     	var email = req.body.email
     	var password = req.body.password
-    	var phoneNumber =  req.body.phoneNumber
+			var phoneNumber =  req.body.phoneNumber
+			var created_timetamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
 
     	var data = {
     		username:username,
     		email:email,
     		password:password,
-    		phone: phoneNumber
+				phone: phoneNumber,
+				status:'inactive',
+				created_timestamp: created_timetamp
     	}
     	connection('jobreference_users').insert(data)
       .then( function (result) {
@@ -30,6 +33,7 @@ var mailer = require('./mailer');
 		});
          
        }) .catch(function (e) {
+				res.send({ error: e}); 
     });
 
     } 
