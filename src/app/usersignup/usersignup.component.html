@@ -1,0 +1,73 @@
+<section>
+		<div class="block no-padding  gray">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="inner2">
+							<div class="inner-title2">
+								<h3>Register</h3>
+								<span>Keep up to date with the latest news</span>
+							</div>
+							<div class="page-breacrumbs">
+								<ul class="breadcrumbs">
+									<li><a href="#" title="">Home</a></li>
+									<li><a href="#" title="">Pages</a></li>
+									<li><a href="#" title="">Register</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="block remove-bottom">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="account-popup-area signup-popup-box static">
+							
+							<div class="account-popup">
+								<h3>Sign Up</h3>
+								<span>Lorem ipsum dolor sit amet consectetur adipiscing elit odio duis risus at lobortis ullamcorper</span>
+								<div class="select-user">
+									<span>Candidate</span>
+									<span>Employer</span>
+								</div>
+								<form [formGroup]="RegisterForm" (ngSubmit)="registerCandidate()">
+									<div class="cfield" [ngClass]="{ 'error': submitted && f.username.errors }">
+									<input type="text" placeholder="Username" placeholder="Username"  formControlName="username" [(ngModel)]="signupData.username" placeholder="********" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.username.errors }"/>
+									<i class="la la-user"></i>
+								
+								</div>
+								<div class="cfield" [ngClass]="{ 'error': submitted && f.password.errors }">
+									<input type="password" placeholder="********" formControlName="password" [(ngModel)]="signupData.password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"/>
+									<i class="la la-key"></i>
+								</div>
+								<div class="cfield" [ngClass]="{ 'error': submitted && f.email.errors }">
+									<input type="text" placeholder="Email" formControlName="email" class="form-control" [(ngModel)]="signupData.email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"/>
+									<i class="la la-envelope-o"></i>
+								</div>
+
+								<div class="cfield" [ngClass]="{ 'error': submitted && f.phoneNumber.errors }">
+									<input type="text" placeholder="Phone Number" formControlName="phoneNumber" class="form-control"  [(ngModel)]="signupData.phoneNumber" [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }"/>
+									<i class="la la-phone"></i>
+								</div>
+									<button type="submit">Signup</button>
+								</form>
+								<div class="extra-login">
+									<span>Or</span>
+									<div class="login-social">
+										<a class="fb-login" href="#" title=""><i class="fa fa-facebook"></i></a>
+										<a class="tw-login" href="#" title=""><i class="fa fa-twitter"></i></a>
+									</div>
+								</div>
+							</div>
+						</div><!-- SIGNUP POPUP -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>

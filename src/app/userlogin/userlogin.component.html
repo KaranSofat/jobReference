@@ -1,0 +1,63 @@
+
+
+<section>
+		<div class="block no-padding  gray">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="inner2">
+							<div class="inner-title2">
+								<h3>Login</h3>
+								<span>Keep up to date with the latest news</span>
+							</div>
+							<div class="page-breacrumbs">
+								<ul class="breadcrumbs">
+									<li><a href="#" title="">Home</a></li>
+									<li><a href="#" title="">Pages</a></li>
+									<li><a href="#" title="">Login</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="block remove-bottom">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="account-popup-area signin-popup-box static">
+							<div class="account-popup">
+								<span>Lorem ipsum dolor sit amet consectetur adipiscing elit odio duis risus at lobortis ullamcorper</span>
+								<form [formGroup]="signinForm" (ngSubmit)="onSignin()">
+								<div class="cfield" [ngClass]="{ 'error': submitted && f.username.errors }">
+									<input type="text" placeholder="Username"  formControlName="username"  placeholder="********" [(ngModel)]="loginData.username" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.username.errors }"/>
+									<i class="la la-user"></i>
+								</div>
+								<div class="cfield"  [ngClass]="{ 'error': submitted && f.password.errors }">
+									<input type="password" formControlName="password" class="form-control" [(ngModel)]="loginData.password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+									<i class="la la-key"></i>
+								</div>
+								<p class="remember-label">
+									<input type="checkbox" name="cb" id="cb1"><label for="cb1">Remember me</label>
+								</p>
+								<a href="#" title="">Forgot Password?</a>
+								<button >Login</button>
+							</form>
+													<div class="extra-login">
+									<span>Or</span>
+									<div class="login-social">
+										<a class="fb-login" href="#" title=""><i class="fa fa-facebook"></i></a>
+										<a class="tw-login" href="#" title=""><i class="fa fa-twitter"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>

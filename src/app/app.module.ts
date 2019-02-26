@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,9 +25,9 @@ import { CandidateAppliedJobsComponent } from './candidate-applied-jobs/candidat
 import { CandidatePostedJobsComponent } from './candidate-posted-jobs/candidate-posted-jobs.component';
 import { CandidateDetailComponent } from './candidate-detail/candidate-detail.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
-import { LoginComponent } from './pops/login/login.component';
-import { SignupComponent } from './pops/signup/signup.component';
-import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
+//import { LoginComponent } from './pops/login/login.component';
+//import { SignupComponent } from './pops/signup/signup.component';
+
 import { NgxUiLoaderModule, NgxUiLoaderConfig, SPINNER, POSITION, PB_DIRECTION } from 'ngx-ui-loader';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { UsersignupComponent } from './usersignup/usersignup.component';
@@ -59,8 +60,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     CandidateAppliedJobsComponent,
     CandidatePostedJobsComponent,
     CandidateDetailComponent,
-    LoginComponent,
-    SignupComponent,
+    //LoginComponent,
+    //SignupComponent,
     UserloginComponent,
     UsersignupComponent
   ],
@@ -90,6 +91,6 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     multi: true
   },AuthGuard,LoginService,DialogService,DataService],
   bootstrap: [AppComponent],
-   entryComponents: [ LoginComponent,SignupComponent ],
+  // entryComponents: [ LoginComponent,SignupComponent ],
 })
 export class AppModule { }
