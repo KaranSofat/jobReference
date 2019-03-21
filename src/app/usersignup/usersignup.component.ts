@@ -7,6 +7,7 @@ import { SignupService } from './signup.service';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { LoginService } from './../userlogin/login.service';
 import { Router } from "@angular/router";
+import { DataService } from './../common/shared.service';
 @Component({
   selector: 'app-usersignup',
   templateUrl: './usersignup.component.html',
@@ -15,6 +16,7 @@ import { Router } from "@angular/router";
 export class UsersignupComponent implements OnInit {
 RegisterForm: FormGroup;
 submitted = false;
+url:any;
 public signupData = { username:'', email: '', password: '',phoneNumber:'' };
  constructor(
  
@@ -24,15 +26,17 @@ public signupData = { username:'', email: '', password: '',phoneNumber:'' };
     private ngxService: NgxUiLoaderService,
     private loginService: LoginService,
     private router : Router,
+    public dataService: DataService
   ) {}
 
   ngOnInit() {
+    
    if(this.loginService.isLoggedIn()){
       this.router.navigateByUrl('/dashboard');
     };
    this.RegisterForm = this.formBuilder.group({
             
-            username: ['', [Validators.required]],
+            username: ['', ],
             password: ['', [Validators.required,Validators.minLength(5)]],
             email: ['', [Validators.required, Validators.email]],
             phoneNumber: ['', [Validators.required,Validators.minLength(10)]],

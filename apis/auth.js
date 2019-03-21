@@ -97,6 +97,29 @@ exports.activateUser = function(req, res, next) {
 	})
 
 }	
+exports.getStates = function(req, res, next) {
+	connection('states')
+	.then(function(result) {
+		res.send({states: result})
+	}).catch(function(e) {
+		res.send({
+			error: e
+		});
+	})
+
+}
+
+exports.getEducations = function(req, res, next) {
+	connection('education')
+	.then(function(result) {
+		res.send({education: result})
+	}).catch(function(e) {
+		res.send({
+			error: e
+		});
+	})
+
+}
 
 exports.getUserDetails = function(req, res, next) {
     res.send("success")

@@ -4562,7 +4562,7 @@ section.overlape {
     font-size: 30px;
     text-align: center;
     margin: 0;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
 }
 .search_widget_job {
     float: left;
@@ -11664,4 +11664,8 @@ header.style4 .account-btns > li a,
 
 .error{
   border: 1px solid #dc3545 !important
+}
+
+.topPostion{
+    padding-top: 50px !important;
 }

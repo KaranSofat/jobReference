@@ -32,6 +32,7 @@
               "src/assets/css/colors.css",
               "src/assets/css/bootstrap.css",
                "node_modules/ngx-toastr/toastr.css",
+               "src/assets/dropdown/style.css"
             ],
             "scripts": []
           },

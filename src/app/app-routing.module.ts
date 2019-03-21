@@ -17,6 +17,7 @@ import { CandidateDetailComponent } from './candidate-detail/candidate-detail.co
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { UsersignupComponent } from './usersignup/usersignup.component';
 import { AuthGuard } from './auth/auth.guard';
+import { PostJobComponent } from './post-job/post-job.component';
 const routes: Routes = [
   {
     path: '',
@@ -35,7 +36,7 @@ const routes: Routes = [
           { path: 'details', component: CandidateDetailComponent, pathMatch: 'full'},
            { path: 'profile', component: CandidateProfileComponent, pathMatch: 'full'},
           { path: 'appliedJobs', component: CandidateAppliedJobsComponent, pathMatch: 'full'},
-          
+          { path: 'post-job', component: PostJobComponent, pathMatch: 'full'},
            { path: 'postedJobs', component: CandidatePostedJobsComponent, pathMatch: 'full'},
           { path: 'personalInfo', component: CandidatePersonalInfoComponent, pathMatch: 'full'},
            

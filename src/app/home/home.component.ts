@@ -6,12 +6,12 @@ import { DataService } from './../common/shared.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  url = "home";
+
  
   constructor(public dataService: DataService) { }
 
   ngOnInit() {
-   this.dataService.setUrl(this.url);
+   
   }
   scroll(){
   const element = document.querySelector("#scroll-here")

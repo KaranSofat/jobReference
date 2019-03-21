@@ -5,4 +5,6 @@ app.post('/registerUser', auth.registerUser);
 app.post('/authenticate', auth.authenticate);
 app.get('/activateUser/:id', auth.authenticate);
 app.get('/userProfile', jwtHelper.verifyJwtToken, auth.getUserDetails);
+app.get('/states',  auth.getStates);
+app.get('/educations', auth.getEducations);
 }

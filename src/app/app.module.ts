@@ -34,7 +34,8 @@ import { UsersignupComponent } from './usersignup/usersignup.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { LoginService } from './userlogin/login.service';
-
+import { PostJobComponent } from './post-job/post-job.component';
+import { SelectDropDownModule } from 'ngx-select-dropdown'
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: 'red',
   bgsPosition: POSITION.bottomCenter,
@@ -63,7 +64,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     //LoginComponent,
     //SignupComponent,
     UserloginComponent,
-    UsersignupComponent
+    UsersignupComponent,
+    PostJobComponent
   ],
   imports: [
     BrowserModule,
@@ -76,6 +78,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
       innerStrokeColor: "#C7E596",
       animationDuration: 300,
     }),
+    SelectDropDownModule,
         FormsModule, 
      ReactiveFormsModule,
      ToastrModule.forRoot({progressBar:true,preventDuplicates: true}), // ToastrModule added

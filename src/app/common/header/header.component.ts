@@ -5,6 +5,8 @@ import { SignupComponent } from './../../pops/signup/signup.component';
 import { DataService } from './../shared.service';
 import { LoginService } from "./../../userlogin/login.service";
 import * as $ from 'jquery';
+import { Router,NavigationEnd } from "@angular/router";
+import {filter} from 'rxjs/operators';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -12,20 +14,31 @@ import * as $ from 'jquery';
 })
 export class HeaderComponent implements OnInit {
 showLogin:boolean = false;
-url = ""
+
 token = ""
- 
- constructor(private loginService : LoginService,private dialogService: DialogService,private el: ElementRef,public dataService: DataService) {
-  this.dataService.getUrl().subscribe(data=> {
-         this.url = data
-      })
+ url:any
+ constructor(private loginService : LoginService,private dialogService: DialogService,
+  private el: ElementRef,public dataService: DataService,
+  private router : Router,) {
+
   this.token = this.loginService.getToken();    
   console.log(this.token)
-
+  this.subscribeRouterEvents();
  }
- 
-  ngOnInit() {
+ subscribeRouterEvents = () => {
+  this.router.events.pipe(
+    filter(e => e instanceof NavigationEnd)
+  ).subscribe(() => {
+     if(this.dataService.urlExists()){
+        this.url = true
+     }else{
+        this.url = false
+     };
+  });
+}
 
+  ngOnInit() {
+   
 
   }
 
